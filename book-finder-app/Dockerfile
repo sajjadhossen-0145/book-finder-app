@@ -17,10 +17,12 @@ FROM eclipse-temurin:17-jre
 WORKDIR /app
 
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/book-finder-app-0.0.1-SNAPSHOT.jar app.jar
+
 
 # Expose the port your app listens on
 EXPOSE 8080
 
 # Start the application
 CMD ["java", "-jar", "app.jar"]
+
